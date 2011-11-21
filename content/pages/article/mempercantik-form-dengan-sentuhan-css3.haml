@@ -1,30 +1,21 @@
-Date: 18 Nov 2011
+Date: 22 Oct 2011
 Categories: category/web-design
 Description: Membuat Form Cantik Dengan Sentuhan CSS3
 Keywords: css3 tricks, form css3, shadow css3, css3 contact form
-Summary: Ini tentang apa yang sedang saya pikirkan & juga firasat saya tentang Timnas Indonesia U-23 kedepannya. Apa bisa meraih medali emas, perak, perunggu, atau malah tidak sama sekali ...? Indonesia kini melaju ke semifinal dengan perolehan 9 poin "Runner Up Group". Itu disebabkan karena kekalahan sore tadi dari malaysia dengan skor 0-1 yang menjadi Juara Group A.
+Summary: Ini tentang apa yang sedang saya pikirkan <em>&</em> juga firasat saya tentang Timnas Indonesia U-23 kedepannya. Apa bisa meraih medali emas, perak, perunggu, atau malah tidak sama sekali ...? Indonesia kini melaju ke semifinal dengan perolehan 9 poin "Runner Up Group". Itu disebabkan karena kekalahan sore tadi dari malaysia dengan skor 0-1 yang menjadi Juara Group A.
 
 %h1 Mempercantik Form Dengan Sentuhan CSS3
-%p
-  Kini jamannya serba menggunakan CSS3 untuk mempercantik halaman website. Bagaimana jika kali ini saya ingin berbagi sedikit trik untuk mempercantik form. Mempercantik form ini bisa di terapkan untuk Form Komentar, Pendaftaran, Login, Halaman Kontak
-  %em &
-  lain sebagainya.
-%p
-  Oke langsung aja ke topik pembahasan supaya jangan terlalu banyak ngelantur. Step pertama buat dulu Dokumen HTML yang berisikan struktur Form. Klo sudah punya, anda bisa tinggal modif
-  %em &
-  menyesuaikan ID / CLASSnya. Mari kita pecahkan Kode HTML
-  %em &
-  CSS yang akan saya tulis dibawah ini ...
-%pre
-  %code
-    :preserve
-      <!DOCTYPE html>
-      <html> 
-      <head> 
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-          <title>Indahnya Form CSS3</title> 
+<p>Kini jamannya serba menggunakan CSS3 untuk mempercantik halaman website. Bagaimana jika kali ini saya ingin berbagi sedikit trik untuk mempercantik form. Mempercantik form ini bisa di terapkan untuk Form Komentar, Pendaftaran, Login, Halaman Kontak <em>&</em> lain sebagainya.</p>
+
+<p>Oke langsung aja ke topik pembahasan supaya jangan terlalu banyak ngelantur. Step pertama buat dulu Dokumen HTML yang berisikan struktur Form. Klo sudah punya, anda bisa tinggal modif <em>&amp;</em> menyesuaikan ID / CLASSnya. Mari kita pecahkan Kode HTML <em>&amp;</em> CSS yang akan saya tulis dibawah ini ...</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+      &lt;html&gt; 
+      &lt;head&gt; 
+          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt; 
+          &lt;title&gt;Indahnya Form CSS3&lt;/title&gt; 
           
-          <style type="text/css"> 
+          &lt;style type=&quot;text/css&quot;&gt; 
               /* Pengaturan Untuk Keseluruhan Body */
       body {
       width:100%;
@@ -33,7 +24,7 @@ Summary: Ini tentang apa yang sedang saya pikirkan & juga firasat saya tentang T
       clear:both;
       margin:0;
       padding:0;
-      font-family:'Palatino Linotype',Palatino,'Zapf Calligraphic','Book Antiqua',Georgia,serif;color:#383838;letter-spacing:0.03em;
+      font-family:&#039;Palatino Linotype&#039;,Palatino,&#039;Zapf Calligraphic&#039;,&#039;Book Antiqua&#039;,Georgia,serif;color:#383838;letter-spacing:0.03em;
       background: #fff
       }
               /* Penetapan Kolom Pada Tengah */
@@ -109,67 +100,57 @@ Summary: Ini tentang apa yang sedang saya pikirkan & juga firasat saya tentang T
       background: #def0fe;
       cursor:pointer; 
       }
-          </style> 
+          &lt;/style&gt; 
           
-      </head>
-      <body> 
-       <section id="tengah">
-          <form action="#"> 
-      <fieldset id="data">          
-        <label for="name">Name :</label>
-        <input type="text" name="name" value="" /> 
-        <label for="email">Email :</label> 
-        <input type="email" name="email" value=""  />
-        <label for="phone">Phone :</label> 
-        <input type="text" name="phone" value=""  />
-        <label for="website">Website :</label> 
-        <input type="url" name="website" value=""  /> 
-      </fieldset>
-      <fieldset id="pesan">
-        <label for="message">Your Message:</label> 
-        <textarea name="message" rows="0" cols="0"></textarea> 
-        <input type="submit" value="Send Message" name="submit" class="submit" /> 
-      </fieldset>
-          </form>   
-       </section>
-      </body> 
-      </html> 
-%p
-  Jika kita pecah-pecah antara kode HTML
-  %em &
-  CSSnya, Maka akan ada sekelumit kode yang harus kita sesuaikan atau membuat form baru untuk form yang sudah kita buat. Tinggal disesuaikan aja deh. Kode HTML yang saya buat sangat mudah untuk di modifikasi. Kode HTMLnya saya tulis dibawah ini ...
-%pre
-  %code
-    :preserve
-       <section id="tengah">
-          <form action="#"> 
-      <fieldset id="data">          
-        <label for="name">Name :</label>
-        <input type="text" name="name" value="" /> 
-        <label for="email">Email :</label> 
-        <input type="email" name="email" value=""  />
-        <label for="phone">Phone :</label> 
-        <input type="text" name="phone" value=""  />
-        <label for="website">Website :</label> 
-        <input type="url" name="website" value=""  /> 
-      </fieldset>
-      <fieldset id="pesan">
-        <label for="message">Your Message:</label> 
-        <textarea name="message" rows="0" cols="0"></textarea> 
-        <input type="submit" value="Send Message" name="submit" class="submit" /> 
-      </fieldset>
-          </form>   
-       </section>
-%p
-  Kode HTML diatas itukan bisa kita hias dengan CSS, jadi yang perlu kita perhatikan adalah Tag HTML, ID,
-  %em &
-  Classnya. Kita tinggal menyesuaikan CSS dengan Tag HTML, ID,
-  %em &
-  Classnya untuk menghiasi dokumen HTML kita. Jika di perhatikan Kode CSS yang saya tulis di bawah ini, Pasti kita tau mana yang kita hiasi tersebut.
-%pre
-  %code
-    :preserve
-          <style type="text/css"> 
+      &lt;/head&gt;
+      &lt;body&gt; 
+       &lt;section id=&quot;tengah&quot;&gt;
+          &lt;form action=&quot;#&quot;&gt; 
+      &lt;fieldset id=&quot;data&quot;&gt;          
+        &lt;label for=&quot;name&quot;&gt;Name :&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot; /&gt; 
+        &lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt; 
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;&quot;  /&gt;
+        &lt;label for=&quot;phone&quot;&gt;Phone :&lt;/label&gt; 
+        &lt;input type=&quot;text&quot; name=&quot;phone&quot; value=&quot;&quot;  /&gt;
+        &lt;label for=&quot;website&quot;&gt;Website :&lt;/label&gt; 
+        &lt;input type=&quot;url&quot; name=&quot;website&quot; value=&quot;&quot;  /&gt; 
+      &lt;/fieldset&gt;
+      &lt;fieldset id=&quot;pesan&quot;&gt;
+        &lt;label for=&quot;message&quot;&gt;Your Message:&lt;/label&gt; 
+        &lt;textarea name=&quot;message&quot; rows=&quot;0&quot; cols=&quot;0&quot;&gt;&lt;/textarea&gt; 
+        &lt;input type=&quot;submit&quot; value=&quot;Send Message&quot; name=&quot;submit&quot; class=&quot;submit&quot; /&gt; 
+      &lt;/fieldset&gt;
+          &lt;/form&gt;   
+       &lt;/section&gt;
+      &lt;/body&gt; 
+      &lt;/html&gt;</pre></code>
+
+<p>Jika kita pecah-pecah antara kode HTML <em>&amp;</em> CSSnya, Maka akan ada sekelumit kode yang harus kita sesuaikan atau membuat form baru untuk form yang sudah kita buat. Tinggal disesuaikan aja deh. Kode HTML yang saya buat sangat mudah untuk di modifikasi. Kode HTMLnya saya tulis dibawah ini ...</p>
+
+<pre><code>&lt;section id=&quot;tengah&quot;&gt;
+          &lt;form action=&quot;#&quot;&gt; 
+      &lt;fieldset id=&quot;data&quot;&gt;          
+        &lt;label for=&quot;name&quot;&gt;Name :&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot; /&gt; 
+        &lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt; 
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;&quot;  /&gt;
+        &lt;label for=&quot;phone&quot;&gt;Phone :&lt;/label&gt; 
+        &lt;input type=&quot;text&quot; name=&quot;phone&quot; value=&quot;&quot;  /&gt;
+        &lt;label for=&quot;website&quot;&gt;Website :&lt;/label&gt; 
+        &lt;input type=&quot;url&quot; name=&quot;website&quot; value=&quot;&quot;  /&gt; 
+      &lt;/fieldset&gt;
+      &lt;fieldset id=&quot;pesan&quot;&gt;
+        &lt;label for=&quot;message&quot;&gt;Your Message:&lt;/label&gt; 
+        &lt;textarea name=&quot;message&quot; rows=&quot;0&quot; cols=&quot;0&quot;&gt;&lt;/textarea&gt; 
+        &lt;input type=&quot;submit&quot; value=&quot;Send Message&quot; name=&quot;submit&quot; class=&quot;submit&quot; /&gt; 
+      &lt;/fieldset&gt;
+          &lt;/form&gt;   
+       &lt;/section&gt;</pre></code>
+
+<p>Kode HTML diatas itukan bisa kita hias dengan CSS, jadi yang perlu kita perhatikan adalah Tag HTML, ID, <em>&amp;</em> Classnya. Kita tinggal menyesuaikan CSS dengan Tag HTML, ID, <em>&amp;</em> Classnya untuk menghiasi dokumen HTML kita. Jika di perhatikan Kode CSS yang saya tulis di bawah ini, Pasti kita tau mana yang kita hiasi tersebut.</p>
+
+<pre><code>&lt;style type=&quot;text/css&quot;&gt; 
               /* Pengaturan Untuk Keseluruhan Body */
       body {
       width:100%;
@@ -178,7 +159,7 @@ Summary: Ini tentang apa yang sedang saya pikirkan & juga firasat saya tentang T
       clear:both;
       margin:0;
       padding:0;
-      font-family:'Palatino Linotype',Palatino,'Zapf Calligraphic','Book Antiqua',Georgia,serif;color:#383838;letter-spacing:0.03em;
+      font-family:&#039;Palatino Linotype&#039;,Palatino,&#039;Zapf Calligraphic&#039;,&#039;Book Antiqua&#039;,Georgia,serif;color:#383838;letter-spacing:0.03em;
       background: #fff
       }
               /* Penetapan Kolom Pada Tengah */
@@ -254,14 +235,6 @@ Summary: Ini tentang apa yang sedang saya pikirkan & juga firasat saya tentang T
       background: #def0fe;
       cursor:pointer; 
       }
-          </style>
-%p
-  Paham atau tidak itu bukan sebuah masalah bagi saya. Itu mungkin karena anda tidak memperhatikan kodenya
-  %em &
-  hanya melakukan CP alias
-  = succeed "." do
-    %code
-      Copy
-      %em &
-      Paste
-  Tapi itu juga bisa menjadi masalah bagi saya karena bahasa penyampaian saya itu sangat sulit untuk dimengerti. Maka dari itu saya ingin terus berlatih membuat suatu penyampaian agar mudah dimengerti oleh orang lain (bukan hanya untuk dimengerti oleh saya sendiri).
+          &lt;/style&gt;</pre></code>
+
+<p>Paham atau tidak itu bukan sebuah masalah bagi saya. Itu mungkin karena anda tidak memperhatikan kodenya <em>&amp;</em> hanya melakukan CP alias <code>Copy <em>&amp;</em> Paste</code>. Tapi itu juga bisa menjadi masalah bagi saya karena bahasa penyampaian saya itu sangat sulit untuk dimengerti. Maka dari itu saya ingin terus berlatih membuat suatu penyampaian agar mudah dimengerti oleh orang lain (bukan hanya untuk dimengerti oleh saya sendiri).</p>

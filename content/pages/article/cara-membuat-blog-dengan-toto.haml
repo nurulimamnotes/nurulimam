@@ -1,32 +1,32 @@
-Date: 18 Nov 2011
+Date: 15 Nov 2011
 Categories: category/blogging-resource
 Description: Mudahnya membuat blog kecil dengan toto dan heroku
 Keywords: blog engine terkecil, toto blog engine, heroku, blog kecil
 Summary: Tulisan ini sebenernya udah lama ada di draft blog "Nurul Imam Notes". Saya lebih memilih mempublikasikannya disini karena engine yang di pakai blog ini adalah Toto. Oke, langsung ke pokok permasalahan untuk sekedar mengingat jika suatu saat saya lupa & ingin membuat blog dengan Toto kan tinggal buka disini aja.
 
 %h1 Cara Membuat Blog Dengan Toto
-Tulisan ini sebenernya udah lama ada di draft blog "Nurul Imam Notes". Saya lebih memilih mempublikasikannya disini karena engine yang di pakai blog ini adalah Toto. Oke, langsung ke pokok permasalahan untuk sekedar mengingat jika suatu saat saya lupa <em>&amp;</em> ingin membuat blog dengan Toto kan tinggal buka disini aja.
+<p>Tulisan ini sebenernya udah lama ada di draft blog "Nurul Imam Notes". Saya lebih memilih mempublikasikannya disini karena engine yang di pakai blog ini adalah Toto. Oke, langsung ke pokok permasalahan untuk sekedar mengingat jika suatu saat saya lupa <em>&amp;</em> ingin membuat blog dengan Toto kan tinggal buka disini aja.</p>
 
-Untuk yang memakai system "Linux" kayaknya hampir semua sudah mengetahui caranya, Jadi yang di tulis saya sekarang ini hanya untuk pemakai "Windows" saja karena kebetulan saya membuat blog ini dengan menggunakan Laptop yang berbasis Windows XP (Dual Boot dengan Ubuntu}.
+<p>Untuk yang memakai system "Linux" kayaknya hampir semua sudah mengetahui caranya, Jadi yang di tulis saya sekarang ini hanya untuk pemakai "Windows" saja karena kebetulan saya membuat blog ini dengan menggunakan Laptop yang berbasis Windows XP (Dual Boot dengan Ubuntu}.</p>
 
-Step pertama : Install dulu paket Ruby On Rails beserta kawan-kawan yang "File Installer Komplitnya" Bisa di download di situs Railsinstaller.com. Itu cara gampangnya, karena memang sudah di pack secara komplit paket2nya. Klo mau download <em>&amp;</em> install satu persatu silahkan deh. Paket wajibnya itu Ruby Installer 1.9.2, RubyGems 1.8.10, Webrick, <em>&amp;</em> msysGit.
+<p>Step pertama : Install dulu paket Ruby On Rails beserta kawan-kawan yang "File Installer Komplitnya" Bisa di download di situs Railsinstaller.com. Itu cara gampangnya, karena memang sudah di pack secara komplit paket2nya. Klo mau download <em>&amp;</em> install satu persatu silahkan deh. Paket wajibnya itu Ruby Installer 1.9.2, RubyGems 1.8.10, Webrick, <em>&amp;</em> msysGit.</p>
 
-Step kedua : Setelah semua terinstall, Jalankan msysGit !
+<p>Step kedua : Setelah semua terinstall, Jalankan msysGit !</p>
 
 <pre><code>$ gem install toto
 $ git clone git://github.com/cloudhead/dorothy.git blog
 $ cd blog
 </code></pre>
 
-Masuk ke direktori <code>C:\Documents and Settings\User\blog\articles</code>. Anda bisa mengedit artikel pada direktori articles <em>&amp;</em> anda juga dapat memodifikasi theme default toto "Dorothy" di direktori public <em>&amp;</em> templates. Untuk menambahkan sebuah artikel, anda cukup mengetikkan perintah dibawah ini ...
+<p>Masuk ke direktori <code>C:\Documents and Settings\User\blog\articles</code>. Anda bisa mengedit artikel pada direktori articles <em>&amp;</em> anda juga dapat memodifikasi theme default toto "Dorothy" di direktori public <em>&amp;</em> templates. Untuk menambahkan sebuah artikel, anda cukup mengetikkan perintah dibawah ini ...</p>
 
 <pre><code>$ rake new
 Title: Masukkan Judul Artikel Anda !
 </code></pre>
 
-Jika sudah di lakukan, maka akan terlihat file berformat <code>.txt</code> pada direktori articles. Disitu anda dapat memodifikasi artikel.
+<p>Jika sudah di lakukan, maka akan terlihat file berformat <code>.txt</code> pada direktori articles. Disitu anda dapat memodifikasi artikel.</p>
 
-Untuk menjalankannya di loclahost, anda bisa menginstall Thin, Shotgun, Maupun Webrick. Cukup install dengan perintah <code>$ gem install namapaket</code>. Lalu bagaimana cara untuk mengonlinekan blog ini ? Anda cukup daftar ke <strong>Heroku</strong> <em>&amp;</em> mengintsallnya dengan perintah di bawah ini ...
+<p>Untuk menjalankannya di loclahost, anda bisa menginstall Thin, Shotgun, Maupun Webrick. Cukup install dengan perintah <code>$ gem install namapaket</code>. Lalu bagaimana cara untuk mengonlinekan blog ini ? Anda cukup daftar ke <strong>Heroku</strong> <em>&amp;</em> mengintsallnya dengan perintah di bawah ini ...</p>
 
 <pre><code>$ gem install heroku
 $ cd blog
@@ -36,4 +36,4 @@ $ git commit -m "Commit Pertamaku"
 $ git push heroku master
 </code></pre>
 
-Setelah selesai, anda sudah bisa langsung mengaksesnya melalui url <code>http://namabloganda.heroku.com</code>. Untuk <strong>Custom Domain Di Heroku</strong>, anda cuma hanya di syaratkan melakukan verifikasi akun anda dengan CC. Seleesailah sudah ... Blog kecil anda sudah bisa di akses <em>&amp;</em> Selamat mencatat catatan kecil anda !
+<p>Setelah selesai, anda sudah bisa langsung mengaksesnya melalui url <code>http://namabloganda.heroku.com</code>. Untuk <strong>Custom Domain Di Heroku</strong>, anda cuma hanya di syaratkan melakukan verifikasi akun anda dengan CC. Seleesailah sudah ... Blog kecil anda sudah bisa di akses <em>&amp;</em> Selamat mencatat catatan kecil anda !</p>
