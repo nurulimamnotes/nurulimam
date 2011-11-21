@@ -1,0 +1,19 @@
+Date: 11 June 2011
+Categories: category/nesta-cms
+Description: Penambahan attachments pada NestaCMS
+Keywords: Attachments, NestaCMS, File Image
+Summary: Penambahan file berupa image, sound, video & lainnya pada NestaCMS.
+
+%h1 Menambahkan File Pada NestaCMS
+%p
+  Penambahan file untuk ditampilkan pada NestaCMS hanya dengan menaruhkan file tersebut pada folder attachments. Misalnya kalian ingin menambahkan sebuah foto yang bernama fotoku.jpg, maka anda cukup membuka dengan url
+  = succeed "." do
+    %code /attachments/HTML5.png
+%p
+  Cara penambahan image/foto kalian cukup dengan menuliskan tag html
+  = succeed "." do
+    %code &lt;img src=&quot;/attachments/HTML5.png&quot; /&gt;
+  Hasilnya bisa kalian lihat pada gambar di bawah ini !
+%p
+  %img.screenshot{:src => "/attachments/HTML5.png"}/
+%p Gampangkan ... ? Makanya, jangan berperang sebelum menyerah. Eit salah ! Maksudnya jangan menyerah sebelum berperang !
