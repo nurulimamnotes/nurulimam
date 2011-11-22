@@ -27,17 +27,5 @@ EOF
       cache haml(:sitemap, :format => :xhtml, :layout => false)
     end
 
-    get '*' do
-      set_common_variables
-      @heading = @title
-      parts = params[:splat].map { |p| p.sub(/\/$/, '') }
-      @page = Nesta::Page.find_by_path(File.join(parts))
-      raise Sinatra::NotFound if @page.nil?
-      @title = @page.title
-      @body_class = @page.date.nil ? 'page' : 'article'
-      @body_class = "foo"
-      set_from_page(:description, :keywords)
-      cache haml(@page.template, :layout => @page.layout)
-    end
   end
 end
