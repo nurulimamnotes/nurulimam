@@ -10,17 +10,7 @@ Allow: /
 Sitemap: http://www.nurulimam.com/articles.xml
 EOF
     end
-
-    get '/css/:sheet.css' do
-      content_type 'text/css', :charset => 'utf-8'
-      cache sass(params[:sheet].to_sym)
-    end
-
-    get %r{/attachments/([\w/.-]+)} do
-      file = File.join(Nesta::Config.attachment_path, params[:captures].first)
-      send_file(file, :disposition => nil)
-    end
-
+    
     get '/articles.xml' do
       content_type :xml, :charset => 'utf-8'
       set_from_config(:title, :subtitle, :author)
