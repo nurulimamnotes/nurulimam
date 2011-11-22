@@ -7,7 +7,7 @@ module Nesta
 User-agent: *
 Allow: /
 
-Sitemap: http://www.nurulimam.com/articles.xml
+Sitemap: http://www.nurulimam.com/sitemap.xml
 EOF
     end
     
