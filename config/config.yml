@@ -34,7 +34,7 @@ disqus_short_name: nurulimam
 #     but not in the least bit helpful if your pages are dynamic, or you're
 #     deploying Nesta to Heroku.
 #
-cache: true
+cache: false
 
 # content
 #     The root directory where nesta will look for your article files.
