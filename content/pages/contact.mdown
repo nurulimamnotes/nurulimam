@@ -5,11 +5,11 @@
 <label for="name" style="font-size:20px;color:#666">Name : </label>
 <input type="text" name="name" value="">
 <section style='margin-top:10px;clear:both'></section>
-<label for="email" style="font-size:20px;color:#666">Mail : </label>
+<label for="email" style="font-size:20px;color:#666">Email : </label>
 <input type="email" name="email" value="">
 <section style='margin-top:10px;clear:both'></section>
 <textarea name="message" rows="0" cols="0" id="message" class="bodytext" style="width: 340px;height: 175px"></textarea><div style="clear:both"></div>
-<input type="submit" value="Send Messages" name="submit" style="width: 100px;float:right;cursor:pointer;font-size: 20px;color:#eee;margin-top:10px;background-color:#18a5cc;border: none;-webkit-transition: -webkit-box-shadow 0.3s linear;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8));background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc)" />
+<input type="submit" value="Send !" name="submit" style="width: 100px;float:right;cursor:pointer;font-size: 20px;text-align:center;color:#eee;margin-top:10px;background-color:#18a5cc;border: none;-webkit-transition: -webkit-box-shadow 0.3s linear;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8));background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc)" />
 </fieldset>
 </form>
 </section>
