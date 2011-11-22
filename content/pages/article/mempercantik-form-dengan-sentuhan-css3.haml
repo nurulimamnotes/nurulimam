@@ -9,7 +9,112 @@ Summary: Ini tentang apa yang sedang saya pikirkan <em>&amp;</em> juga firasat s
 
 <p>Oke langsung aja ke topik pembahasan supaya jangan terlalu banyak ngelantur. Step pertama buat dulu Dokumen HTML yang berisikan struktur Form. Klo sudah punya, anda bisa tinggal modif <em>&amp;</em> menyesuaikan ID / CLASSnya. Mari kita pecahkan Kode HTML <em>&amp;</em> CSS yang akan saya tulis dibawah ini ...</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;&lt;title&gt;Indahnya Form CSS3&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;/* Pengaturan Untuk Keseluruhan Body */body {width:100%;height:100%;overflow:auto;clear:both;margin:0;padding:0;font-family:&#039;Palatino Linotype&#039;,Palatino,&#039;Zapf Calligraphic&#039;,&#039;Book Antiqua&#039;,Georgia,serif;color:#383838;letter-spacing:0.03em;background: #fff}/* Penetapan Kolom Pada Tengah */#tengah {margin:0 auto 0 10%}form {float: left;border: 1px solid #def0ef;padding: 30px 40px 20px 40px;margin: 75px 0 75px 0;width: 715px;background: #def0ef;/* Membuat Rounded Cornners Pada Form */-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;/* Membuat Background Graident */background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#def0ef), to(#fff));background: -moz-linear-gradient(30% 40% 120deg,#fff, #def0ef);/* Membuat Box Drop Shadow */-webkit-box-shadow:0px 0 50px #def0ef;-moz-box-shadow:0px 0 50px #def0ef;box-shadow:0px 0 50px #def0ef}/* Font Pada Label */label {font-size: 1em;color: #333}fieldset {border: none}#data {float: left;width: 230px}#pesan {float: right;width: 405px}input, textarea {padding: 8px;margin: 4px 0 20px 0;background: #fff;width: 220px;font-size: 14px;color: #555;border: 1px #def0ef solid}textarea {width: 390px;height: 260px}/* Membuat Background Gradient Jika Tersentuh */input:hover, textarea:hover {background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#def0ef), to(#fff));background: -moz-linear-gradient(40% 60% 360deg,#fff, #def0ef);}input.submit {width:120px;float:right;color:dcc;margin-top:10px;background:#def0ef;border: none;/* Membuat Rounded Cornners Pada Form */-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;}input.submit:hover {background: #def0fe;cursor:pointer;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;section id=&quot;tengah&quot;&gt;&lt;form action=&quot;#&quot;&gt;&lt;fieldset id=&quot;data&quot;&gt;&lt;label for=&quot;name&quot;&gt;Name :&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot; /&gt;&lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;&quot;  /&gt;&lt;label for=&quot;phone&quot;&gt;Phone :&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;phone&quot; value=&quot;&quot;  /&gt;&lt;label for=&quot;website&quot;&gt;Website :&lt;/label&gt;&lt;input type=&quot;url&quot; name=&quot;website&quot; value=&quot;&quot;  /&gt;&lt;/fieldset&gt;&lt;fieldset id=&quot;pesan&quot;&gt;&lt;label for=&quot;message&quot;&gt;Your Message:&lt;/label&gt;&lt;textarea name=&quot;message&quot; rows=&quot;0&quot; cols=&quot;0&quot;&gt;&lt;/textarea&gt;&lt;input type=&quot;submit&quot; value=&quot;Send Message&quot; name=&quot;submit&quot; class=&quot;submit&quot; /&gt;&lt;/fieldset&gt;&lt;/form&gt;&lt;/section&gt;&lt;/body&gt;&lt;/html&gt;</pre></code>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt; 
+&lt;title&gt;Indahnya Form CSS3&lt;/title&gt; 
+&lt;style type=&quot;text/css&quot;&gt;
+body {
+width:100%;
+height:100%;
+overflow:auto;
+clear:both;
+margin:0;
+padding:0;
+font-family:&#039;Palatino Linotype&#039;,Palatino,&#039;Zapf Calligraphic&#039;,&#039;Book Antiqua&#039;,Georgia,serif;color:#383838;letter-spacing:0.03em;
+background: #fff
+}
+#tengah {
+margin:0 auto 0 10%
+}
+form { 
+float: left;
+border: 1px solid #def0ef; 
+padding: 30px 40px 20px 40px; 
+margin: 75px 0 75px 0;
+width: 715px;
+background: #def0ef;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#def0ef), to(#fff)); 
+background: -moz-linear-gradient(30% 40% 120deg,#fff, #def0ef); 
+-webkit-box-shadow:0px 0 50px #def0ef;
+-moz-box-shadow:0px 0 50px #def0ef; 
+box-shadow:0px 0 50px #def0ef
+}
+label { 
+font-size: 1em;
+color: #333
+}
+fieldset {
+border: none
+}
+#data { 
+float: left;
+width: 230px
+}
+#pesan { 
+float: right;
+width: 405px
+}
+input, textarea {       
+padding: 8px; 
+margin: 4px 0 20px 0; 
+background: #fff; 
+width: 220px; 
+font-size: 14px; 
+color: #555; 
+border: 1px #def0ef solid
+}
+textarea {      
+width: 390px; 
+height: 260px
+}
+input:hover, textarea:hover { 
+background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#def0ef), to(#fff)); 
+background: -moz-linear-gradient(40% 60% 360deg,#fff, #def0ef); 
+}
+input.submit {
+width:120px;
+float:right;
+color:dcc; 
+margin-top:10px;
+background:#def0ef;
+border: none;
+-moz-border-radius: 4px; 
+-webkit-border-radius: 4px;
+border-radius: 4px;
+}
+input.submit:hover { 
+background: #def0fe;
+cursor:pointer; 
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+&lt;section id=&quot;tengah&quot;&gt;
+&lt;form action=&quot;#&quot;&gt; 
+&lt;fieldset id=&quot;data&quot;&gt;          
+&lt;label for=&quot;name&quot;&gt;Name :&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot; /&gt; 
+&lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt; 
+&lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;&quot;  /&gt;
+&lt;label for=&quot;phone&quot;&gt;Phone :&lt;/label&gt; 
+&lt;input type=&quot;text&quot; name=&quot;phone&quot; value=&quot;&quot;  /&gt;
+&lt;label for=&quot;website&quot;&gt;Website :&lt;/label&gt; 
+&lt;input type=&quot;url&quot; name=&quot;website&quot; value=&quot;&quot;  /&gt; 
+&lt;/fieldset&gt;
+&lt;fieldset id=&quot;pesan&quot;&gt;
+&lt;label for=&quot;message&quot;&gt;Your Message:&lt;/label&gt; 
+&lt;textarea name=&quot;message&quot; rows=&quot;0&quot; cols=&quot;0&quot;&gt;&lt;/textarea&gt; 
+&lt;input type=&quot;submit&quot; value=&quot;Send Message&quot; name=&quot;submit&quot; class=&quot;submit&quot; /&gt; 
+&lt;/fieldset&gt;
+&lt;/form&gt;   
+&lt;/section&gt;
+&lt;/body&gt; 
+&lt;/html&gt;</pre></code>
 
 <p>Jika kita pecah-pecah antara kode HTML <em>&amp;</em> CSSnya, Maka akan ada sekelumit kode yang harus kita sesuaikan atau membuat form baru untuk form yang sudah kita buat. Tinggal disesuaikan aja deh. Kode HTML yang saya buat sangat mudah untuk di modifikasi. Kode HTMLnya saya tulis dibawah ini ...</p>
 
