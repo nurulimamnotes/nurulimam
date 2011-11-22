@@ -4,7 +4,6 @@
   = haml :summaries, :layout => false, :locals => { :pages => @page.pages, :heading => :h3 }
 
   - unless @page.articles.empty?
-    %h2= "Articles on #{@page.heading}"
     = haml :summaries, :layout => false, :locals => { :pages => @page.articles, :heading => :h3 }
       
   - unless @page.categories.empty?
