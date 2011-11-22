@@ -13,17 +13,296 @@ Summary: Kenapa "Pihak WordPress" masih belum memperbaiki error code bahkan hany
 
 <p>Pertama-tama, masuk ke direktori WordPress sesuai dengan hosting yang anda pakai. Bisa menggunakan Webdisk, cPanel File Manager, VistaPanel File Manager, PleskPanel File Manager, Bahkan Bisa juga dengan menggunakan FTP. Setelah masuk ke direktori WordPress yang anda install, Silahkan cari file yang bernama <code>wp-settings.php</code>. Masukkan <code>error_reporting(0);</code> setelah kode <code>&lt;?php</code> <em>&amp;</em> simpan perubahan.</p>
 
-%pre.code
-    - preserve do
-        :escaped
-          <?php
-            error_reporting(0);
-                   /**
-               Ini Hanya Contoh Penempatan Kode <strike>Penghapus Dosa</strike>
- 
-                   @package Nurul Imam Notes
-                     */
+<pre><code>&lt;?php
+error_reporting(0);
+/**
+Ini Hanya Contoh Penempatan Kode <strike>Penghapus Dosa</strike>
+@package Nurul Imam Notes
+*/
+</code></pre>
 
 <p>Kemudian amankan juga direktori WordPress pada folder <code>wp-admin</code>. Caranya masih sama seperti cara di atas hanya dengan menambahkan <code>error_reporting(0);</code> setelah kode <code>&lt;?php</code>. File yang harus di tambahkan kode tersebut adalah <code>admin-functions.php</code>, <code>menu.php</code>, <code>menu-header.php</code>, <code>options-head.php</code>, <em>&amp;</em> <code>upgrade-functions.php</code>.</p>
 
 <p>Lanjut ke Direktori WordPress pada folder <code>wp-admin/includes</code>. Di direktori ini banyak sekali bugs yang harus di tambal dengan cara di atas. Namun, saya punya alternatif lain untuk menambal bugs pada folder ini yang lebih cepat tanpa mengedit satu persatu file yang mengandung pesan kesalahan. Cara alternatif itu adalah membuat file <code>.htaccess</code> pada direktori tersebut, Lalu isikan file <code>.htaccess</code> itu dengan beberapa baris kode di bawah ini...</p>
+
+<pre><code>php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors on
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks on
+php_flag track_errors on
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_reporting -1
+php_value log_errors_max_len 0
+</code></pre>
+
+<p>Setelah melakukan cara di atas, berarti secara tidak langsung anda menambal satu persatu bugs yang ada pada direktori <code>wp-admin/includes</code>. Jika anda ingin memastikan ini bekerja atau tidak, silahkan test dulu dengan mengetikkan alamat blog wordpress anda di address bar browser anda. Contohnya <code>http://www.nurulimam.com/wp-admin/includes/nama-file.php</code>. Nama file yang mengandung kesalahan bisa di lihat di bawah ini ...</p>
+
+<pre><code>admin.php
+class-ftp-pure.php
+class-ftp-sockets.php
+class-ftp.php
+class-wp-filesystem-direct.php
+class-wp-filesystem-ftpext.php
+class-wp-filesystem-ftpsockets.php
+class-wp-filesystem-ssh2.php
+comment.php
+continents-cities.php
+file.php
+media.php
+misc.php
+plugin-install.php
+plugin.php
+template.php
+theme-install.php
+update.php
+upgrade.php
+user.php
+</code></pre>
+
+<p>Langkah selanjutnya adalah mengamankan direktori WordPress pada folder <code>wp-includes</code>. Di folder ini juga banyak sekali file yang mengandung pesan kesalahan yang harus di tambal. Pesan kesalahan itu bisa di temui jika anda mengakses file di bawah ini ...</p>
+
+<pre><code>canonical.php
+class-feed.php
+class.wp-scripts.php
+class.wp-styles.php
+comment-template.php
+default-embeds.php
+default-filters.php
+default-widgets.php
+feed-atom-comments.php
+feed-atom.php
+feed-rdf.php
+feed-rss.php
+feed-rss2-comments.php
+feed-rss2.php
+general-template.php
+kses.php
+media.php
+post.php
+registration-functions.php
+rss-functions.php
+rss.php
+script-loader.php
+shortcodes.php
+taxonomy.php
+template-loader.php
+theme.php
+update.php
+vars.php
+wp-db.php
+user.php</code></pre>
+
+<p>Dari pada anda menambal satu persatu file yang cukup banyak, Lebih baik jika anda menggunakan trick redirect dengan <code>.htaccess</code>. Caranya mudah sekali, tinggal anda buat satu file bernama <code>.htaccess</code> <em>&amp;</em> masukkan kode di bawah ini...</p>
+
+<pre><code>&lt;ifmodule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule .*\.php$ http://namadomainanda [L]
+</code></pre>
+
+<p>Untuk cara simplenya tambahkan kode <code>ini_set("display_errors", 0); error_reporting(0);</code> pada <code>wp-config.php</code>. Itu sudah dapat menutupi pesan kesalahan pada semua direktori WordPress. Lalu apa lagi yang harus dilakukan setelah menerapkan cara di atas ?</p>
+
+<h3 style="font-size:1.5em;margin-bottom:10px;text-align:center">Step Ke-2 "Mengamankan <code>wp-config.php</code>"</h3>
+
+<p>Langkah pertama, Silahkan backup dulu file wp-config.php yang ada di root directory WordPress anda entah disimpan di komputer maupun di web hosting anda. Itu semata-mata hanya untuk menjaga-jaga agar kelak terjadinya kesalahan, anda masih dapat mengembalikannya seperti semula. Setelah itu buat file dengan nama apa saja (yang terpenting file itu dengan ekstensi <code>.php</code>), Lalu simpan di direktori yang tidak terbaca oleh public (lebih tepatnya di direktori paling atas) dengan contoh saya membuatnya di atas direktori www / public. Isikan beberapa baris kode pada file tersebut dengan file konfigurasi wordpress anda. Contohnya bisa di lihat di bawah ini...</p>
+
+<pre><code>&lt;?php
+ini_set("display_errors", 0);
+error_reporting(0);
+
+define('DB_NAME', 'nama_database');
+define('DB_USER', 'user_database');
+define('DB_PASSWORD', 'pass_database');
+define('DB_HOST', 'localhost');
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+
+$table_prefix  = 'tablewp_';
+?&gt;
+</code></pre>
+
+Setelah selesai dibuat, panggil file tadi dengan cara menuliskan <code>include('/home/nurulima/secure.php');</code> pada <code>wp-config.php</code>. Contoh gampangnya bisa anda lihat di bawah ini ...</p>
+
+<pre><code>&lt;?php
+ini_set("display_errors", 0);
+error_reporting(0);
+include('/home/usernamecpanelanda/nama-file-yang-tadi-dibuat.php');
+
+define('AUTH_KEY',         'thadm59wnk3wxmmucut9rxgrttxfpeogtovdv25tygc0otijahsqg81keluwiegt');
+define('SECURE_AUTH_KEY',  'hu5dtxuruhpukph3tip2t4hcgmdbreb0ejg0vbylyrrdc0u7zann86uye6poh7es');
+define('LOGGED_IN_KEY',    '1iclqx6onlrvm2czsxjx6bdppld2k69wyat8t8sbkbncjuhmwovtgwqvznmrbijt');
+define('NONCE_KEY',        '8i4agtcsdqycydkqsaug2ztxhqs2nilttrrpsivadqx2ev2rcgichp9u03n4nsrl');
+define('AUTH_SALT',        'ogom5nc4kfknqeo5iesa9mypx0tkadprzlp8ixo3pqqq9x9ed7khgguxyxjzoxou');
+define('SECURE_AUTH_SALT', 'geb6dbtcn4kveneltnffxe2nepjtv0mqtob0x1vdjlfae32dkcwv0tvhq0lugpoo');
+define('LOGGED_IN_SALT',   'o4rgbyi9hjijdydsvsf5btayqmigqnpivjftctof6tonm7mvvlgbsyvzvca9lupy');
+define('NONCE_SALT',       'm4qfqrxwy6dwpl89wy88xkqclvredjyr3gkspjgib3vu54p14y9kggkzzy6yqutu');
+
+
+define('WPLANG', 'en');
+define('WP_DEBUG', false);
+define('WP_CACHE', true);
+define('WP_POST_REVISIONS', false);
+define('WP_ALLOW_REPAIR', false);
+define('WP_HOME', 'http://namadomainanda');
+define('WP_SITEURL', 'http://namadomainanda');
+define('COOKIE_DOMAIN', 'namadomainanda');
+define('AUTOSAVE_INTERVAL', 300);
+
+if ( !defined('ABSPATH') )
+define('ABSPATH', dirname(__FILE__) . '/');
+require_once(ABSPATH . 'wp-settings.php');
+</code></pre>
+
+<h3 style="font-size:1.5em;margin-bottom:10px;text-align:center">Step Ke-3 "Mengamankan Form Login WordPress"</h3>
+
+<p>Cara ini lumayan cukup ampuh untuk menghalangi "Sang Cracker" menguasai kontrol admin blog WordPress anda meskipun cracker sudah berhasil membobol username <em>&amp;</em> password anda. Oke, Rename <code>wp-login.php</code> dengan nama apapun. Jika anda merename file tersebut, maka anda juga hanya bisa masuk melalui <code>http://namadomainanda/nama-file-yang-direname.php</code>. Eit, tunggu dulu ! Itu belum selesai, Lanjutkan dengan mengedit file tadi <em>&amp;</em> Replace kode <code>wp-login.php</code> yang ada di dalamnya dengan <code>nama-file-yang-direname.php</code> <em>&amp;</em> simpan perubahan.</p>
+
+<h3 style="font-size:1.5em;margin-bottom:10px;text-align:center">Step Ke-4 "Keamanan Extra Pada <code>.htaccess</code>"</h3>
+
+<p>Keamanan extra yang harus dilakukan adalah dengan cara menambahkan kode di bawah ini kedalam file <code>.htaccess</code>. Edit file <code>.htaccess</code> yang ada di root direktori wordpress anda. Lalu tambahkan kode dibawah ini tepat pada paling teratas (Line Pertama).</p>
+
+<pre><code>&lt;files .htaccess&gt;
+order allow,deny
+deny from all
+&lt;/files&gt;
+&lt;IfModule mod_setenvif.c&gt;
+SetEnvIfNoCase User-Agent ^$ keep_out
+SetEnvIfNoCase User-Agent (casper|cmsworldmap|diavol|dotbot)   keep_out
+SetEnvIfNoCase User-Agent (flicky|ia_archiver|jakarta|kmccrew) keep_out
+SetEnvIfNoCase User-Agent (libwww|planetwork|pycurl|skygrid)   keep_out
+&lt;Limit GET POST PUT&gt;
+Order Allow,Deny
+Allow from all
+Deny from env=keep_out
+&lt;/Limit&gt;
+&lt;/IfModule&gt;
+
+&lt;Limit GET POST&gt;
+order deny,allow
+deny from all
+allow from all
+&lt;/Limit&gt;
+
+Options All -indexes
+ServerSignature Off
+LimitRequestBody 10240000
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (\&lt;|%3C).*script.*(\&gt;|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+RewriteCond %{QUERY_STRING} !error
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(wp-includes|wp-content)/(.+)\.php\ HTTP/
+RewriteRule .* - [F]
+&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{QUERY_STRING} (environ|localhost|mosconfig|scanner) [NC,OR]
+RewriteCond %{QUERY_STRING} (menu|mod|path|tag)\=\.?/? [NC,OR]
+RewriteCond %{QUERY_STRING} boot\.ini  [NC,OR]
+RewriteCond %{QUERY_STRING} echo.*kae  [NC,OR]
+RewriteCond %{QUERY_STRING} etc/passwd [NC,OR]
+RewriteCond %{QUERY_STRING} \=\\%27$   [NC,OR]
+RewriteCond %{QUERY_STRING} \=\\\'$    [NC,OR]
+RewriteCond %{QUERY_STRING} \.\./      [NC,OR]
+RewriteCond %{QUERY_STRING} \:         [NC,OR]
+RewriteCond %{QUERY_STRING} \[         [NC,OR]  
+RewriteCond %{QUERY_STRING} \]         [NC,OR]  
+RewriteCond %{QUERY_STRING} ^.*(%0|%A|%B|%C|%D|%E|%F|127.0).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(globals|encode|loopback).* [NC,OR]  
+RewriteCond %{QUERY_STRING} ^.*(%22|%27|%3C|%3E|%5C|%7B|%7C).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(request|select|insert|union|declare|drop).* [NC]
+RewriteRule ^(.*)$ - [F,L]
+&lt;/IfModule&gt;
+</code></pre>
+
+<h3 style="font-size:1.5em;margin-bottom:10px;text-align:center">Step Ke-5 "Memperbaiki Error Pada Feed WordPress"</h3>
+
+<p>Terkadang jika kita menginstall Theme <em>&amp;</em> Plugin, Kita tidak tahu berjalan / tidaknya Feed WordPress kita. Itu dikarenakan adanya kesalahan penulisan pada kode yang terdapat pada plugin <em>&amp;</em> theme kita. Biasanya masalah yang muncul adalah penulisan space pada kode <code>&lt;?php</code>. Bagaimana cara memperbaikinya ? Apa kita perlu memeriksa satu persatu kode yang salah ? Jika hhanya bertujuan untuk memperbaiki kesalahan memparsing feed, lebih baik tambahkan saja fungsi pembersihan kode yang salah tersebut pada file yang terletak pada directory <code>wp-includes</code>. File tersebut bisa dilihat dibawah ini...</p>
+
+<pre><code>feed-atom.php
+feed-atom-comments.php
+feed-rdf.php
+feed-rss2.php
+feed-rss2-comments.php
+feed-rss.php
+</code></pre>
+
+<p>Edit file-file di atas <em>&amp;</em> tambahkan kode dibawah ini tepat di atas kode <code>echo '&lt;?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'&gt;'; ?&gt;</code>. Kode yang harus di tambahkan bisa di lihat dibawah ini...</p>
+
+<pre><code>$out = ob_get_contents();
+$out = str_replace(array("\n", "\r", "\t", " "), "", $input);
+ob_end_clean();
+</code></pre>
+
+<h3 style="font-size:1.5em;margin-bottom:10px;text-align:center">Step Ke-6 "Menambahkan <code>Robots.txt</code>"</h3>
+
+<p>Fungsi dari penambahan <code>robots.txt</code> ini selain memberitahukan "Search Engine" untuk menentukan mana yang boleh di index <em>&amp;</em> mana yang tidak boleh di index, <code>robots.txt</code> ini juga berperan agar search engine tidak menghabiskan bandwith kita untuk mengindex yang kita tentukan saja. Buat <code>robots.txt</code> di direktori wordpress anda <em>&amp;</em> isikan file <code>robots.txt</code> dengan yang saya tuliskan dibawah ini ...</p>
+
+<pre><code>User-agent: Googlebot
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /*.gz$
+Disallow: /*.wmv$
+Disallow: /*.cgi$
+Disallow: /*.xhtml$
+Disallow: /*?*
+Disallow: /*?
+Disallow: /*?postcomment=true
+Disallow: /*?comments=true
+Disallow: /*page=
+Disallow: /*?page=
+Disallow: /*pg=
+Disallow: /?pg=
+
+
+User-agent: duggmirror
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-register.php
+Disallow: /trackback/
+Disallow: /feed/
+
+Sitemap: http://domainanda/sitemap.xml
+Sitemap: http://domainanda/sitemap.xml.gz
+</code></pre>
+
+<h3 style="font-size: 1.5em; margin-bottom: 10px; text-align: center;">Step Ke-7 "Menghapus File Yang Tidak Penting"</h3>
+
+<p>Pertama, Hapuslah Direktori <code>wp-content/languages</code>. Ini memungkinkan agar anda tidak mengost file terlalu banyak di web hosting anda. ini sangat di anjurkan bagi yang memiliki kapasitas disk space yang terbilang sangat minim. Jika anda menghapus semua file yang ada di direktori <code>wp-content/languages</code>, berarti anda sudah menghemat disk space anda dengan menghapus file yang berukuran kurang lebih 20 MB.</p>
+
+<p>Kedua, Hapuslah File <code>readme.html</code>. Ini dilakukan agar sang Cracker tidak mengetahui Versi WordPress yang kita pakai sekarang. Terakhir hapuslah file <code>install.php</code> pada direktori <code>wp-admin</code>. Ini juga banyak cracker yang menembus celah keamanan melalui bugs pada file <code>install.php</code>.</p>
+
+<h3 style="font-size: 1.5em; margin-bottom: 10px; text-align: center;">Step Ke-8 "Pilihan Konfigurasi Permalinks"</h3>
+
+<p>Konfigurasi permalinks pada wordpress itu sangat penting, Bukan hanya berefek pada "SEO" semata namun juga dapat sedikit mengurangi dari kerentanan keamanan blog anda. Defaultnya wordpress memberikan permalinks seperti <code>http://domainanda/?p=123</code>. Konfigurasi permalinks yang biasa saya pakai ada 3 macam.</p>
+
+<p>Pertama, saya menggunakan Custom Structure <em>&amp;</em> di ikuti dengan <code>/%year%/%monthnum%/%postname%.html</code> yang akan menjadi <code>http://domainanda/2011/10/judul-dari-artikel-anda.html</code>. Ini Biasa saya pakai jika WordPress berhubungan sangat dekat dengan Mesin Blogger.</p>
+
+<p>Kedua, saya biasa menggunakan Custom Structure <em>&amp;</em> di ikuti dengan <code>/%year%/%postname%/</code> yang akan menjadi <code>http://domainanda/2011/judul-dari-artikel-anda/</code>. Ini saya pakai jika tidak ada hubungan antar CMS yang saya pakai.</p>
+
+<p>Terakhir, saya menggunakan Day <em>&amp;</em> Name <code>/%year%/%monthnum%/%day%/%postname%/</code> yang akan menjadi <code>http://localhost/blog/2011/10/25/judul-dari-artikel-anda/</code>. Ini yang saya lakukan jika blog berhubungan dengan Toto "Engine Blog Yang Saya Pakai Sekarang". Jadi jika suatu saat saya memindahkan blog ini ke WordPress / sebaliknya, Saya tidak merasa kesulitan dengan berkurangnya Dead Link.</p>
+
+<h3 style="font-size: 1.5em; margin-bottom: 10px; text-align: center;">Step Ke-9 "Mengisntall Plugin Yang Perlu Saja"</h3>
+
+<p>Jangan isntall plugin yang berlebihan, itu dapat memberatkan kinerja server karena banyak memakan Resources. Install Plugin yang perlu saja. Plugin yang Ringan <em>&amp;</em> Perlu Digunakan adalah <strong>Block Bad Query <em>&amp;</em> Google Sitemap Generator</strong>. Adapun <strong>All in One SEO Pack <em>&amp;</em> W3 Total Cache</strong> itu tidak di anjurkan pada Shared Hosting.</p>
+
+<h3 style="font-size: 1.5em; margin-bottom: 10px; text-align: center;">Step Ke-10 "Menghapus Post & Pages Default"</h3>
+
+<p>Setelah 9 Step diatas sudah dilakukan, Saatnya kita melangkah ke step yang terakhir. Defaultnya WordPress memberikan sample post, pages, links, <em>&amp;</em> category. Nah, Anda hapus semuanya <em>&amp;</em> Keep Posting. Posting sesuka hatimu ! Jangan merasa terbebani dengan waktu <em>&amp;</em> topic untuk update postingnya.</p>
+
+<p>Demikianlah catatan saya pribadi untuk mengingatkan saya ketika pertama kali menginstall WordPress. Dengan adanya catatan ini, saya pribadi merasa terbantu untuk mengingatnya. Semoga catatan ini dapat bermanfaat untuk siapapun yang membacanya.</p>
