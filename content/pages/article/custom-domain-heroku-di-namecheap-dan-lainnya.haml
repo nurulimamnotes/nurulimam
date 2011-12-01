@@ -1,0 +1,20 @@
+Date: 1 Dec 2011
+Categories: archive, category/blogging-resource
+Description: Setting Domain Namecheap Mengarah Ke Heroku Dengan A Reccord dan CNAME
+Keywords: custom domain heroku, setting domain namecheap, heroku
+Summary: Tulisan ini mudah-mudahan memberikan sdikit kemudahan entah itu untuk saya sendiri maupun orang lain. Itu dikarenakan seringnya saya melakukan <strong>Custom Domain Heroku</strong> untuk aplikasi Ruby on Rails yang saya deploy ke Heroku. Dari pada bulak balik ke heroku, mending saya tulis disini supaya bisa melihatnya secara offline maupun online.
+
+%h1 Custom Domain Heroku
+<p>Tulisan ini mudah-mudahan memberikan sdikit kemudahan entah itu untuk saya sendiri maupun orang lain. Itu dikarenakan seringnya saya melakukan <strong>Custom Domain Heroku</strong> untuk aplikasi Ruby on Rails yang saya deploy ke Heroku. Dari pada bulak balik ke heroku, mending saya tulis disini supaya bisa melihatnya secara offline maupun online.</p>
+
+<p>Caranya sih cukup mudah, yang susah buat saya itu mengingat IP Address yang harus di isikan di A Reccordnya. Jadi klo anda mau mencustom domain melalui cPanel anda, Caranya sederhana kok. Pastikan anda sudah membuat <strong>Subdomain</strong> <em>&amp;</em> Masuk ke menu "Advanced Zone Editor". Masukkan A reccord pada root domain <em>&amp;</em> CNAME pada Subdomain.<pre><code>Hostname          Type         IP/URL            TTL
+nurulimam.com      A       75.101.163.44         1800
+nurulimam.com      A       75.101.145.87         1800
+nurulimam.com      A       174.129.212.2         1800
+www.nurulimam.com CNAME  namapps.heroku.com      1800</code></pre>Segampang itukah ? Iya donk. Kebetulan saya membeli domain di Namecheap, Jadi untuk <strong>Cara Setting Custom Domain Mengarah Ke Heroku</strong> sama halnya seperti di atas. Lebih Detailnya Masuk dulu ke account namecheap kamu, Lalu klik domain yang mau di arahin ke heroku. Setelah itu Rubah settingannya seperti berikut.<pre><code>Hostname          RECORD TYPE          IP/URL            TTL
+@                      A           75.101.163.44         1800
+@                      A           75.101.145.87         1800
+@                      A           174.129.212.2         1800
+www                  CNAME      namapps.heroku.com       1800</code></pre>Masih belum paham ? Simak video saya yang barusan saya upload di youtube. Videonya cuma 30 detik saja. Semoga anda paham dengan yang saya katakan.</p>
+<iframe width="100%" height="315" src="http://www.youtube.com/embed/7qyuAtsAEKM" frameborder="0" allowfullscreen></iframe>
+<p>Klo anda tidak paham lagi, Itu bukan urusan saya. Sayakan cuma "Menulis Catatan Saja", Jadi jangan mendesak saya supaya saya memberikan tutorial yang anda mau. Karena saya bukan Penulis Tutorial.</p>
