@@ -32,7 +32,9 @@
     %section{:style => "margin-top:70px;clear:both"}
     %footer
       %p{:style => "float:left;margin-left:3%"}
-        Copyright © 2011 Blog <em>&amp;</em> Note of "Nurul Imam"
+        Copyright © 2011
+        %a{:href => "/", :title => "Blog & Note of Nurul Imam"} Blog <em>&amp;</em> Note of "Nurul Imam"
       %p{:style => "float:right;margin-right:3%"}
-        Simple Notes Theme Designed <em>by</em> : Nurul Imam
+        Simple Notes Theme Designed <em>by</em> : 
+        %a{:href => "/about", :title => "About Nurul Imam"} Nurul Imam
       = haml :analytics, :layout => false
