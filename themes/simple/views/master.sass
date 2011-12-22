@@ -267,7 +267,10 @@ section h2 a
   &:hover, &:focus
     color: #333!important
     text-shadow: 0 0 1px #000
-
+    
+.hape
+  display: none !important
+    
 footer
   width: 100%
   background-color: #000
@@ -387,10 +390,13 @@ footer
     width: auto
 
 @media screen and (min-width: 200px) and (max-width: 480px)
-  header h1, #icon, footer
+  header, footer
     display: none !important
   #menu
     float: none
     font-size: 50%
     margin-left: 5%
     margin-right: auto
+  .hape
+    display: block !important
+    margin: 5px auto 5px 42.5%
