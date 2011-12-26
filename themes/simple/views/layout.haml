@@ -31,12 +31,6 @@
     <section class="hape"> <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"><option value="">Menu</option><option value="http://www.nurulimam.info/">Home</option><option value="http://www.nurulimam.com/">Notes</option><option value="http://www.nurulimam.info//daftar-semua-artikel-nurul-imam-notes-html">Archive</option><option value="http://www.nurulimam.info//plugin-style-replacement">Plugin</option><option value="http://www.nurulimam.info//blank-on-wordpress-theme">Theme</option><option value="http://www.nurulimam.info//profile-penulis-nurul-imam">About</option><option value="http://www.nurulimam.info//kontak-kami-jika-ada-masalah">Contact</option> </select> </section>
     = yield
     %section{:style => "margin-top:70px;clear:both"}
-<script
-type="text/javascript">var _gaq=[['_setAccount','UA-27943554-1'],[
-'_trackPageview']];(function(d,t){var
-g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src='//www.
-google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')<
-/script>
     %footer
       %p{:style => "float:left;margin-left:3%"}
         Copyright © 2011
@@ -44,4 +38,10 @@ google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')<
       %p{:style => "float:right;margin-right:3%"}
         Simple Notes Theme Designed <em>by</em> : 
         %a{:href => "/about", :title => "About Nurul Imam"} Nurul Imam
+     :javascript
+  var _gaq=[['_setAccount','UA-27943554-1'],[
+  '_trackPageview']];(function(d,t){var
+  g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src='//www.
+ 
+google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')
       = haml :analytics, :layout => false
