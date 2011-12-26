@@ -1,6 +1,3 @@
-# Title and subheading for your site. Used on the home page and in page
-# titles.
-#
 title: "Blog and Note of Nurul Imam"
 subtitle: "Just a note about me, music, computer, internet, and web design"
 
@@ -18,8 +15,3 @@ cache: false
 content: content
 
 google_analytics_code: "UA-27943554-1"
-
-production:
-  cache: true    
-  content: /var/apps/nesta/shared/content
-  google_analytics_code: "UA-27943554-1"
