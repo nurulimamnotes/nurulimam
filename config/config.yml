@@ -17,9 +17,9 @@ cache: false
 
 content: content
 
-# google_analytics_code: "UA-26389582-1"
+google_analytics_code: "UA-27943554-1"
 
-# production:
-#   cache: true    
-#   content: /var/apps/nesta/shared/content
-#   google_analytics_code: "UA-26389582-1"
+production:
+  cache: true    
+  content: /var/apps/nesta/shared/content
+  google_analytics_code: "UA-27943554-1"
