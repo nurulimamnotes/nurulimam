@@ -1,0 +1,39 @@
+Date: 19 Dec 2011
+Categories: archive, category/catatan, category/computer
+Description: Membuat bookmark jadul dengan menggunakan MS-DOS Program Batch File
+Keywords: Program Batch, Pemrograman, Dummy Code, Bookmarks
+Summary: Iseng-iseng aja nulis update nih. Kali ini mau pingin promosiin blog saya dengan membuatkan Program Batch yang berfungsi sebagai bookmark. Kok jadi turun pangkat ngutak-ngatik Pemrograman Batch yah ? Udah lama sih gak nengokin MS-DOS {OS pertama yang paling berjasa bagi saya} <em>&amp;</em> sekarang malah berencana gak nengokin XP {OS ke-2 yang paling berjasa bagi saya} lagi.
+
+%h1 Membuat Bookmark Jadul Dengan Batch File
+<p>Iseng-iseng aja nulis update nih. Kali ini mau pingin promosiin blog saya dengan membuatkan Program Batch yang berfungsi sebagai bookmark. Kok jadi turun pangkat ngutak-ngatik <strong>Pemrograman Batch</strong> yah ? Udah lama sih gak nengokin MS-DOS {OS pertama yang paling berjasa bagi saya} <em>&amp;</em> sekarang malah berencana gak nengokin XP {OS ke-2 yang paling berjasa bagi saya} lagi.</p>
+
+<p>Jangan sepelekan Pemrograman Batch ini, Karena bagaimanapun juga itu awal dari pembelajaran tentang Pemrograman. Jangan tinggalkan juga MS-DOS, Tapi beralihlah ke Linux/UNIX yang canggih. Bagi yang mau beajar pemrograman, bikin software, sebaiknya pahami dulu MS-DOS sampe rabun matanya. hehehe</p>
+
+<p>Untuk refrensi secuil kode entah itu <code>echo, set, if</code> <em>&amp;</em> lainnya cari sendiri di Google.com. Saya cuma iseng mau nulis kode kecil di bawah ini...<pre><code>code:
+@echo off
+TITLE Situs Favoriteku
+mode 43,10
+
+<em>:start</em>
+echo ========{{ Kunjungi Website Saya }}========
+echo 1. Blog Dan Majalah Nurul Imam
+echo 2. Blog Dan Catatan Nurul Imam
+echo 3. Walk Design Company Profile
+echo ___________________________________________
+set /p i=Pilih : 
+echo Tunggu Sebentar !
+if not defined i goto start
+if "%i%"=="1" goto nurulimamnotes
+if "%i%"=="2" goto blognurulimam
+if "%i%"=="3" goto walkdesign
+goto start
+<em>:nurulimamnotes</em>
+start http://www.nurulimam.info/
+goto start
+<em>:blognurulimam</em>
+start http://www.nurulimam.com/
+goto start
+<em>:walkdesign</em>
+start http://www.walkdesign.heroku.com/
+goto start
+</code></pre>Simpan text yang sudah di tulis tadi dengan nama <code>bookmarks.bat</code> <em>&amp;</em> pilih Save as type ke All Files. Ayo dicoba-coba dengan mengklik dua kali file tersebut dan di ikuti dengan pemilihan situs yang ada dan tekan enter. Sama aja kan kita membuat bookmarks yang mana jika kita pilih situs yang mau kita buka akan terbuka di browser yang kita pakai.</p>

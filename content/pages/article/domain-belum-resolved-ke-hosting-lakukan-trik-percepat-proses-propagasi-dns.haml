@@ -1,0 +1,53 @@
+Date: 21 Dec 2011
+Categories: archive, category/blogging-resource
+Description: Trik Memaksakan Percepat Proses Propogasi Domain Agar Domain Segera Resolved
+Keywords: Propogasi Domain, Domain Resolved, Flush DNS, Update DNS
+Summary: Ketika Domain <em>&amp;</em> Hosting sudah aktif, Tapi anda belum bisa membuka domain anda melalui browser, bahkan jika anda melakukan ping menggunakan command prompt, anda tidak mendapatkan reply / mendapatkan pesan request could not find host. Penyebabnya adalah Propagasi DNS, Karena setiap <abbr title="Internet Service Provider">ISP</abbr> memiliki update berbeda-beda untuk meresolve domain. Update DNS ISP biasanya sekitar 24 s/d 72 Jam, tergantung kecepatan update DNS ISP anda.
+
+%h1 Cara Mempercepat Proses Propagasi DNS
+<p>Ketika Domain <em>&amp;</em> Hosting sudah aktif, Tapi anda belum bisa membuka domain anda melalui browser, bahkan jika anda melakukan ping menggunakan command prompt, anda tidak mendapatkan reply / mendapatkan pesan request could not find host. Penyebabnya adalah <strong>Propagasi DNS</strong>, Karena setiap <abbr title="Internet Service Provider">ISP</abbr> memiliki update berbeda-beda untuk meresolve domain. Update DNS ISP biasanya sekitar 24 s/d 72 Jam, tergantung kecepatan update DNS ISP anda.</p>
+
+<p><strong>Resolved DNS</strong> pada prinsipnya hanya memperkenalkan IP baru didomain tersebut keseluruh DNS yang ada di muka bumi ini. Proses Resolved DNS memerlukan waktu paling lambat sampai 2 x 24 Jam. Ini mungkin bermasalah bagi anda yang butuh untuk mengedit / menambahkan artikel dengan cepat. Jika anda baru mendaftarkan nama domain atau pindah hosting <em>&amp;</em> ketika anda mengisi / mengupdate <abbr title="Nameserver">NS</abbr> di Control Panel Domain, Domain anda tidak langsung terarah pada server hosting tersebut. Perpindahan tersebut memerlukan waktu untuk proses yang dinamakan <strong>Propagasi Domain</strong> atau <strong>Resolve Domain</strong>.</p>
+
+<h3 style="text-align:center;font-size:1.4em;color:#555;text-shadow:0 0 1px black;margin-bottom:7px;padding-bottom:4px;border-bottom:2px solid #def0ef;border-top:2px solid #def0ef;">Faktor Yang Mempengaruhi Proses Propagasi</h3>
+
+
+<h4 style="font-size:1.1em;color:#555;text-shadow:0 0 1px black;margin-bottom:4px;">1. Registrar Domain</h4>
+<p>Data domain name tercatat di Registrar atau Server Domain Name. Ketika anda melakukan pergantian NS, Maka Registrar akan mengganti data tentang alamat IP server hosting kita yang baru. Respond Registrar ada yang cepat <em>&amp;</em> ada juga yang lambat. Domain name Internasional atau <abbr title="Top Level Domain">TLD</abbr> biasanya memiliki respon yang lebih cepat jika dibandingkan Registrar Domain name Lokal / ccTLD.</p>
+
+<h4 style="font-size:1.1em;color:#555;text-shadow:0 0 1px black;margin-bottom:4px;">2. Umur Domain</h4>
+<p>Jika anda mendaftarkan Domain baru <em>&amp;</em> sejak awal sudah diarahkan ke <abbr title="Nameserver">NS</abbr> hosting anda, Maka masa propagasinya biasanya cepat. Begitu anda buka domainnya di web browser, Maka akan langsung tersambung. Tetapi jika Domain ini sebelumnya sudah diarahkan ke server hosting yang terdahulu, kemudian diarahkan ke server hosting yang baru {Misalnya : ketika proses pindah server}, Maka diperlukan waktu propagasi domain yang lebih lama. Hal ini dikarenakan adanya cache, baik pada komputer kita maupun cache pada ISP.</p>
+
+<h4 style="font-size:1.1em;color:#555;text-shadow:0 0 1px black;margin-bottom:4px;">3. Internet Service Provider</h4>
+<p>Masa propagasi juga sangat dipengaruhi oleh  ISP kita. Perlu diketahui bahwa rute informasi ketika mengakses internet  adalah dimulai dari adanya perintah dari komputer kita, kemudian  perintah tersebut diteruskan ke ISP, kemudian dari ISP akan diteruskan  ke server hosting melalui beberapa titik jaringan. Begitu juga dengan  respon yang diberikan oleh server hosting juga akan melalui rute  tersebut. Dengan alasan untuk mengurangi beban terkadang ISP menggunakan  cache memory yang besar, sehingga ketika pelanggan mengakses internet  terasa lebih cepat. Padahal data yang diakses adalah data buffer. Jika  kita menggunakan ISP yang seperti ini yang biasanya masa propagasi  domain menjadi lebih lama karena menunggu ISP tersebut melakukan refresh  jaringan internetnya.</p>
+
+<h3 style="text-align:center;font-size:1.4em;color:#555;text-shadow:0 0 1px black;margin-bottom:7px;padding-bottom:4px;border-bottom:2px solid #def0ef;border-top:2px solid #def0ef;">Trik Mempercepat Propagasi DNS / Resolved Domain</h3>
+
+<p>Biasanya masalah Propagasi Domain ini berasal dari ISP yang anda gunakan. Jika anda mengalami masalah Propagasi yang lama, Maka lakukan langkah-langkah berikut ini : 
+<ul style="list-style:circle;font-size:0.8em;color:#000;text-align:justify;">
+<li>Refresh Web Browser dengan menekan tombol <code>CTRL + F5</code> secara bersamaan. Sudah terhubungkah ...? Jika masih belum terhubung, Coba lakukan langkah selanjutnya !</li>
+<li>Bersihkan Cache Web Browser anda ! Jika anda pengguna "Mozilla Firefox", Pilih menu <strong>Tools &gt; Clear Private Data</strong>, Beri tanda centang pada pilihan <strong>Cache</strong> <em>&amp;</em> Klik tombol <strong>Clear Private Data Now</strong>.</li>
+<li>Putus koneksi Internet anda ! Shutdown Komputer anda <em>&amp;</em> mintalah bantuan teman anda (yang berada di luar daerah <em>&amp;</em> memakai ISP yang sama anda} untuk segera mengakses domain anda. Jika bisa terhubung, Berarti "Komputer" anda yang bermasalah.</li>
+<li>Minta juga bantuan teman anda (yang memakai ISP berlainan dengan anda) untuk segera mengakses domain anda ! Jika teman anda berhasil terhubung ke server baru anda, Berarti "ISP" anda yang bermasalah.</li>
+<li>Coba anda akses Website lain yang IP addressnya sama (NS-nya sama) dengan  Website Anda ! Jika bisa tersambung berarti server hosting tidak  bermasalah, Melainkan "Registrarnya (Server Domain)" yang bermasalah. Hubungi <em>&amp;</em> Tanyakan pada Registrar Domain anda !</li>
+</ul>
+</p>
+
+<h3 style="text-align:center;font-size:1.4em;color:#555;text-shadow:0 0 1px black;margin-bottom:7px;padding-bottom:4px;border-bottom:2px solid #def0ef;border-top:2px solid #def0ef;">Trik Memaksa ISP Anda Untuk Update DNS</h3>
+
+<p>Silahkan Cek IP dari domain anda ! Saya mencontohkan domain <code>nurulimam.com</code> sebagai contoh domain yang sedang menjalani proses Propogasi. IP Adresss <a href="http://www.nurulimam.com" title="Blog & Note of Nurul Imam" target="_blank">Nurulimam.com</a> adalah <code>174.129.212.2</code>. Cara Untuk mengetahui sebuah IP Domain Name, Anda bisa melihatnya melalui cPanel Hosting. Caranya, Login ke cPanel, Lalu lihat informasi stats pada cPanel anda !</p>
+
+
+<p>Bagi pengguna Windows, Klik <strong>Start &gt; Run</strong> <em>&amp;</em> Isikan perintah berikut ini...<pre><code>notepad C:\WINDOWS\system32\drivers\etc\hosts
+</code></pre>Setelah terbuka, Masukkan alamat IP <em>&amp;</em> Domain / Sub-domain yang ingin dipaksa Resolvingnya ! Untuk lebih jelasnya lihat dibawah ini...<pre><code>127.0.0.1   localhost
+10.10.10.10 domainanda.com # Baris Yang Ditambahkan
+10.10.10.10 www.domainsaya.com # Baris Yang Ditambahkan
+</code></pre>Save File Host tadi <em>&amp;</em> Gunakan Flush DNS dengan cara seperti berikut...<pre><code>ipconfig /flushdns
+</code></pre>Jika anda menggunakan router seperti mikrotik, Anda bisa menambahkan static IP address. Ketikan text berikut di console mikrotik.<pre><code>/ip dns static add address=10.10.10.10 name=domainanda.com
+/ip dns static add address=10.10.10.10 name=www.domainanda.com
+</code></pre>Lalu lakukan flush dns di mikrotik dengan cara<pre><code>/ip dns cache flush
+</code></pre>Lakukan juga Flush DNS di komputer client anda ! Refresh Browser anda ! Coba akses lagi domain anda ! Insya Allah akan langsung terhubung dengan server baru anda. Kalau masih belum bisa, Silahkan Restart Komputer Anda !</p>
+
+<p>Perlu diingat bahwa ini hanyalah metode sementara saja. Setelah beberapa hari disarankan untuk dihapus kembali baris yang sudah anda tuliskan di dalamnya. Ini berperan jika suatu saat jika anda mengarahkan Domain anda ke server baru, Maka anda akan tetap di arahkan ke server lama ana jika anda mengakses Domain anda melalui Komputer yang belum anda hapus baris yang sudah anda tuliskan tadi. Selamat mencoba ....</p>
+
+<p>"<em>Artikel ini ditulis atas pengalaman pribadi saya dan diambil dari berbagai sumber</em>"</p>
