@@ -35,25 +35,10 @@ Summary: Ketika Domain <em>&amp;</em> Hosting sudah aktif, Tapi anda belum bisa 
 
 <h3 style="text-align:center;font-size:1.4em;color:#555;text-shadow:0 0 1px black;margin-bottom:7px;padding-bottom:4px;border-bottom:2px solid #def0ef;border-top:2px solid #def0ef;">Trik Memaksa ISP Anda Untuk Update DNS</h3>
 
-<p>Silahkan Cek IP dari domain anda ! Saya mencontohkan domain <code>nurulimam.com</code> sebagai contoh domain yang sedang menjalani proses Propogasi. IP Adresss <a href="http://www.nurulimam.com" title="Blog & Note of Nurul Imam" target="_blank">Nurulimam.com</a> adalah <code>199.167.135.210</code>. Cara Untuk mengetahui sebuah IP Domain Name, Anda bisa melihatnya melalui cPanel Hosting. Caranya, Login ke cPanel, Lalu lihat informasi stats pada cPanel anda !</p>
-
-<p>Bagi pengguna Windows, Klik <strong>Start &gt; Run</strong> <em>&amp;</em> Isikan perintah berikut ini...<pre><code>notepad C:\WINDOWS\system32\drivers\etc\hosts
-</code></pre>Setelah terbuka, Masukkan alamat IP <em>&amp;</em> Domain / Sub-domain yang ingin dipaksa Resolvingnya ! Untuk lebih jelasnya lihat dibawah ini...<pre><code>127.0.0.1   localhost
-10.10.10.10 domainanda.com # Baris Yang Ditambahkan
-10.10.10.10 www.domainsaya.com # Baris Yang Ditambahkan
-</code></pre>Contoh Kasus Untuk Domain Saya Yang Di Host Heroku<pre><code>75.101.145.87 nurulimam.com
-174.129.212.2 nurulimam.com
-75.101.145.87 nurulimam.com
-75.101.163.44 nurulimam.com
-nurulimam.heroku.com www.nurulimam.com
-199.167.135.210 cpanel.nurulimam.com
-</code></pre>
-Save File Host tadi <em>&amp;</em> Gunakan Flush DNS dengan cara seperti berikut...<pre><code>ipconfig /flushdns
-</code></pre>Jika anda menggunakan router seperti mikrotik, Anda bisa menambahkan static IP address. Ketikan text berikut di console mikrotik.<pre><code>/ip dns static add address=10.10.10.10 name=domainanda.com
-/ip dns static add address=10.10.10.10 name=www.domainanda.com
-</code></pre>Lalu lakukan flush dns di mikrotik dengan cara<pre><code>/ip dns cache flush
-</code></pre>Lakukan juga Flush DNS di komputer client anda ! Refresh Browser anda ! Coba akses lagi domain anda ! Insya Allah akan langsung terhubung dengan server baru anda. Kalau masih belum bisa, Silahkan Restart Komputer Anda !</p>
-
-<p>Perlu diingat bahwa ini hanyalah metode sementara saja. Setelah beberapa hari disarankan untuk dihapus kembali baris yang sudah anda tuliskan di dalamnya. Ini berperan jika suatu saat jika anda mengarahkan Domain anda ke server baru, Maka anda akan tetap di arahkan ke server lama ana jika anda mengakses Domain anda melalui Komputer yang belum anda hapus baris yang sudah anda tuliskan tadi. Selamat mencoba ....</p>
-
-<p>"<em>Artikel ini ditulis atas pengalaman pribadi saya dan diambil dari berbagai sumber</em>"</p>
+<p>Silahkan Cek IP dari domain anda ! Saya mencontohkan domain
+<code>nurulimam.com</code> sebagai contoh domain yang sedang menjalani proses
+Propogasi. IP Adresss <a href="http://www.nurulimam.com" title="Blog & Note of
+Nurul Imam" target="_blank">Nurulimam.com</a> adalah
+<code>199.167.135.210</code>. Cara Untuk mengetahui sebuah IP Domain Name, Anda
+bisa melihatnya melalui cPanel Hosting. Caranya, Login ke cPanel, Lalu lihat
+informasi stats pada cPanel anda !</p>
